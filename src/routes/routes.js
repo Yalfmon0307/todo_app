@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { login, register, createTask } from "../controllers/controllers.js";
+import { login, register, createTask, getTasks } from "../controllers/controllers.js";
 
 const router = Router();
 
@@ -19,7 +19,7 @@ router.post("/tasks", createTask, (req, res) => {
     res.send("Tasks");
 })
 
-router.get("/tasks", (req, res) => {
+router.get("/tasks", getTasks, (req, res) => {
     res.send("getTasks");
 })
 

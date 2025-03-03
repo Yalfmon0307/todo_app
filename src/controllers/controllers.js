@@ -78,3 +78,31 @@ export const createTask = async (req, res) => {
         res.status(500).json({ message: 'Internal server error' });
     }
 }
+
+export const getTasks = async (req, res) => {
+    try {
+        const token = req.cookies.token;
+
+        if (!token) {
+            return res.status(401).json({ message: 'Unauthorized' });
+        }
+
+        const user = verifyToken(token);
+
+        if (!user) {
+            return res.status(401).json({ message: 'Unauthorized' });
+        }
+
+        const user_id = user.id;
+
+        const response = await pool.query('SELECT * FROM tasks WHERE user_id = $1', [user_id]);
+        if (response.rows.length > 0) {
+            res.status(200).json({ message: 'Tasks retrieved successfully', tasks: response.rows });
+        } else {
+            res.status(404).json({ message: 'No tasks found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+}
