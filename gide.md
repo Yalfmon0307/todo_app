@@ -28,13 +28,13 @@ Aquí tienes una lista de pasos para crear una Todo App en Node.js con PostgreSQ
 ### 6. Crear la Estructura de Archivos
    - Crea un directorio `src` y organiza los archivos:
      - `index.js` (punto de entrada).☑️
-     - `routes/` (para las rutas de la API).
+     - `routes/` (para las rutas de la API).☑️
      - `controllers/` (lógica de negocio).
      - `models/` (modelo de datos).
      - `middleware/` (middleware para autenticación).
 
 ### 7. Implementar el Servidor Express
-   - Configura el servidor Express en `index.js`.
+   - Configura el servidor Express en `index.js`.☑️
    - Conecta a la base de datos PostgreSQL.
 
 ### 8. Crear Rutas de Autenticación

@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { login, register } from "../controllers/controllers.js";
 
 const router = Router();
 
@@ -6,11 +7,11 @@ router.get("/", (req, res) => {
     res.send("Hello World!");
 });
 
-router.get("/login", (req, res) => {
+router.post("/login", login, (req, res) => {
     res.send("Login");
 });
 
-router.post("/register", (req, res) => {
+router.post("/register", register, (req, res) => {
     res.send("Register");
 })
 
