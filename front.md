@@ -1,0 +1,5 @@
+- iniciarl el front con vite ☑️
+- crear el componente Home con las rutas register y login
+- crear los router de react 
+- crear el componente para obtener las tareas 
+- crear la funcion para agregar tareas dentro del componente de obtenerlas.
