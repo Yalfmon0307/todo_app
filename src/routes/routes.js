@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { login, register } from "../controllers/controllers.js";
+import { login, register, createTask } from "../controllers/controllers.js";
 
 const router = Router();
 
@@ -15,7 +15,7 @@ router.post("/register", register, (req, res) => {
     res.send("Register");
 })
 
-router.post("/tasks", (req, res) => {
+router.post("/tasks", createTask, (req, res) => {
     res.send("Tasks");
 })
 
