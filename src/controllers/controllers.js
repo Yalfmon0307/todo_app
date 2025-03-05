@@ -48,6 +48,7 @@ export const register = async (req, res) => {
 export const createTask = async (req, res) => {
     try {
         const token = req.cookies.token;
+        console.log(token);
 
         if (!token) {
             return res.status(401).json({ message: 'Unauthorized' });
@@ -82,6 +83,7 @@ export const createTask = async (req, res) => {
 export const getTasks = async (req, res) => {
     try {
         const token = req.cookies.token;
+        console.log(token);
 
         if (!token) {
             return res.status(401).json({ message: 'Unauthorized' });
@@ -99,7 +101,7 @@ export const getTasks = async (req, res) => {
         if (response.rows.length > 0) {
             res.status(200).json({ message: 'Tasks retrieved successfully', tasks: response.rows });
         } else {
-            res.status(404).json({ message: 'No tasks found' });
+            res.status(404).json({ message: 'No tasks found'});
         }
     } catch (error) {
         console.error(error);
