@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export const GetTask = () => {
   const [tareas, setTareas] = useState([]);
@@ -22,7 +23,6 @@ export const GetTask = () => {
 
       const data = await response.json();
       setTareas(data.tasks || []); // Usa un arreglo vacío si `data.tareas` es undefined
-      console.log(data);
       setCargando(false);
     };
 
@@ -47,6 +47,7 @@ export const GetTask = () => {
           ))}
         </ul>
       )}
+      <Link to="/createTask">Agregar Tarea</Link>
     </div>
   );
 };

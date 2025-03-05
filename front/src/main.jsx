@@ -7,6 +7,7 @@ import { Home } from './Home.jsx';
 import { Login } from './Login.jsx';
 import { Register } from './Register.jsx';
 import { GetTask } from './GetTask.jsx';
+import { CreateTask} from './createTask.jsx';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: '/tasks',
     element: <GetTask />,
+  },
+  {
+    path: '/createTask',
+    element: <CreateTask />,
   }
 ]);
 

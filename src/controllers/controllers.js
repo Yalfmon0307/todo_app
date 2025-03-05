@@ -48,7 +48,6 @@ export const register = async (req, res) => {
 export const createTask = async (req, res) => {
     try {
         const token = req.cookies.token;
-        console.log(token);
 
         if (!token) {
             return res.status(401).json({ message: 'Unauthorized' });
@@ -75,7 +74,6 @@ export const createTask = async (req, res) => {
         }
 
     } catch (error) {
-        console.error(error);
         res.status(500).json({ message: 'Internal server error' });
     }
 }
@@ -83,7 +81,6 @@ export const createTask = async (req, res) => {
 export const getTasks = async (req, res) => {
     try {
         const token = req.cookies.token;
-        console.log(token);
 
         if (!token) {
             return res.status(401).json({ message: 'Unauthorized' });

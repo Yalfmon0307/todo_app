@@ -6,6 +6,7 @@ import { useState } from 'react';
 export const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [access, setAccess] = useState(false);
+  const [error, setError] = useState(null);
   
 
 
@@ -20,10 +21,14 @@ export const Login = () => {
     })
     .then(response => response.json())
     .then(data => {
-      console.log(data);
+      if (data.message === 'User not found') {
+        setError(data.message);
+      }else{
+        setError(null);
+        setAccess(true);
+      }
     })
     
-    setAccess(true);
     // Aquí puedes manejar la lógica de inicio de sesión, como enviar los datos a tu API
   };
 
@@ -52,6 +57,7 @@ export const Login = () => {
 
           {access && <p>Acceso concedido</p>}
           {access && <Link to="/tasks">ir a mis tareas</Link>}
+          {error && <p>{error}</p>}
         </div>
 
         <button type="submit">Iniciar Sesión</button>
