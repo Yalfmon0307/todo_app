@@ -27,6 +27,7 @@ export const CreateTask = () => {
 
       if (!response.ok) {
         setError(data.message);
+        window.location.href = '/';
       } else {
         setExito(data.message);
         setTask(''); // Limpiar el campo de entrada

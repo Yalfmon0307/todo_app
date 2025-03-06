@@ -105,3 +105,27 @@ export const getTasks = async (req, res) => {
         res.status(500).json({ message: 'Internal server error' });
     }
 }
+
+export const logout = async (req, res) => {
+    try {
+        res.clearCookie('token'); // Borra el token de las cookies
+        res.status(200).json({ message: 'Logout successful' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+};
+
+export const deleteTask = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const response = await pool.query('DELETE FROM tasks WHERE id = $1', [id]);
+        if (response.rowCount > 0) {
+            res.status(200).json({ message: 'Task deleted successfully' });
+        } else {
+            res.status(404).json({ message: 'Task not found' });
+        }
+    } catch (error) {
+        res.status(500).json({ message: 'Internal server error' });
+    }
+}

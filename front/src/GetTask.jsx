@@ -6,6 +6,40 @@ export const GetTask = () => {
   const [cargando, setCargando] = useState(true);
   const [error, setError] = useState(null);
 
+  const deleteTask = (tareaId) => {
+    const id = tareaId;
+     
+    fetch(`http://localhost:3000/tasks/${id}`, {
+      method: 'DELETE',
+      credentials: 'include', // Esto incluye cookies en la solicitud
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setTareas((prevTareas) => prevTareas.filter((tarea) => tarea.id !== id));
+
+      })
+      .catch((error) => {
+        console.error('Error al eliminar la tarea:', error);
+      });
+  }
+
+  const logout = () => {
+    fetch('http://localhost:3000/logout', {
+      method: 'POST',
+      credentials: 'include', // Esto incluye cookies en la solicitud
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        
+      })
+      .catch((error) => {
+        console.error('Error al cerrar sesión:', error);
+      });
+
+    window.location.href = '/';
+  }
+
   useEffect(() => {
     const obtenerTareas = async () => {
       setCargando(true);
@@ -18,6 +52,7 @@ export const GetTask = () => {
         const text = await response.text(); // Obtiene el texto de la respuesta
         setError(`Error: ${response.status} - ${text}`);
         setCargando(false);
+        window.location.href = '/';
         return;
       }
 
@@ -43,11 +78,12 @@ export const GetTask = () => {
       ) : (
         <ul>
           {tareas.map((tarea) => (
-            <li key={tarea.id}>{tarea.task}</li> // Asumiendo que cada tarea tiene un "id" y "nombre"
+            <li key={tarea.id}>{tarea.task} <button onClick={() => deleteTask(tarea.id)}>X</button></li> // Asumiendo que cada tarea tiene un "id" y "nombre"
           ))}
         </ul>
       )}
       <Link to="/createTask">Agregar Tarea</Link>
+      <button onClick={ logout}>Cerrar Sesion</button>
     </div>
   );
 };
