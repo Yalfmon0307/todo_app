@@ -52,7 +52,6 @@ export const GetTask = () => {
         const text = await response.text(); // Obtiene el texto de la respuesta
         setError(`Error: ${response.status} - ${text}`);
         setCargando(false);
-        window.location.href = '/';
         return;
       }
 
