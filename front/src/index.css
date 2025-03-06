@@ -66,3 +66,47 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Centrar el contenedor principal */
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Asegúrate de que los elementos se coloquen en columna */
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Estilo para los formularios */
+form {
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: center; /* Centra los elementos dentro del formulario */
+}
+
+/* Espaciado entre los botones */
+button, a {
+  margin: 10px 0; /* Agrega un margen vertical entre los botones */
+}
+
+/* Estilo para los mensajes de error y éxito */
+p {
+  text-align: center; /* Centra el texto */
+  margin: 5px 0; /* Espaciado adicional */
+}
+
+.link {
+  display: block; /* O inline-block si prefieres */
+  margin: 10px; /* Ajusta el margen según sea necesario */
+  text-align: center; /* Centra el texto del enlace */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Asegura que el contenido esté centrado verticalmente */
+  text-align: center; /* Centra el texto en toda la página */
+}
