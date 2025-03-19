@@ -4,7 +4,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-dependencies": "npm install && npm install --prefix front",
+    "start": "npm install concurrently &&  concurrently \"node src/app.js\" \"npm run dev --prefix front\"",
+    "db": "node src/db.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +23,7 @@
   "description": "",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "concurrently": "^9.1.2",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
