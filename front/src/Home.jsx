@@ -5,8 +5,11 @@ export function Home() {
     <>
       <h1>Bienvenido a la aplicacion TodoApp</h1>
       <p>Puedes iniciar sesion o registrarte</p>
+      <div className="link-container">
       <Link to="/login" className="link">Iniciar Sesión</Link>
       <Link to="/register" className="link">Registrarme</Link>
+      </div>
+      
     </>
   ) 
 }

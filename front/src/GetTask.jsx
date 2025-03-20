@@ -82,7 +82,9 @@ export const GetTask = () => {
         </ul>
       )}
       <Link to="/createTask">Agregar Tarea</Link>
+      <div className="logout-container">
       <button onClick={ logout}>Cerrar Sesion</button>
+      </div>
     </div>
   );
 };

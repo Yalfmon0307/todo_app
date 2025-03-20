@@ -1,112 +1,273 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+/* CreateTask.css */
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #2c2f33; /* Fondo más oscuro */
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  color: #6a0dad; /* Morado vibrante */
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra para resaltar el texto */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+input {
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #7a0b7a; /* Morado más claro */
+  border-radius: 5px;
+  width: 300px;
+  font-size: 16px;
+  background-color: #3f4144; /* Color de fondo del input */
+  color: white; /* Color del texto en el input */
+}
+
+input:focus {
+  border-color: #a45db2; /* Color al enfocar */
+  outline: none;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  padding: 10px 20px;
+  background-color: #6a0dad; /* Morado vibrante */
+  color: white;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  font-size: 16px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+button:disabled {
+  background-color: #b45ec1; /* Morado deshabilitado */
 }
 
-/* Centrar el contenedor principal */
-body {
-  margin: 0;
-  display: flex;
-  flex-direction: column; /* Asegúrate de que los elementos se coloquen en columna */
-  align-items: center; /* Centra horizontalmente */
-  justify-content: center; /* Centra verticalmente */
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-/* Estilo para los formularios */
-form {
-  display: flex;
-  flex-direction: column; /* Coloca los elementos en columna */
-  align-items: center; /* Centra los elementos dentro del formulario */
-}
-
-/* Espaciado entre los botones */
-button, a {
-  margin: 10px 0; /* Agrega un margen vertical entre los botones */
-}
-
-/* Estilo para los mensajes de error y éxito */
 p {
-  text-align: center; /* Centra el texto */
-  margin: 5px 0; /* Espaciado adicional */
+  text-align: center;
+  margin: 10px 0;
+}
+
+p.error {
+  color: red;
+}
+
+p.success {
+  color: green;
+}
+
+a {
+  display: block;
+  text-align: center;
+  color: #6a0dad; /* Morado vibrante */
+  margin-top: 15px;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* GetTask.css */
+
+ul {
+  list-style-type: none; /* Quitar puntos de la lista */
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  background-color: #3f4144; /* Color de fondo de los elementos de la lista */
+  margin: 10px auto; /* Margen automático para centrar */
+  padding: 10px;
+  border-radius: 5px;
+  display: flex; /* Cambiar a flex para alinear el contenido */
+  justify-content: space-between; /* Espacio entre el texto y el botón */
+  width: 300px; /* Ancho fijo para los elementos */
+  text-align: left; /* Alinear texto a la izquierda */
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #6a0dad; /* Morado vibrante */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #7a0b7a; /* Morado más claro al pasar el mouse */
+}
+
+button:focus {
+  outline: none;
+}
+
+p {
+  text-align: center;
+  margin: 10px 0;
+  color: white; /* Color del texto */
+}
+
+a {
+  display: block;
+  text-align: center;
+  color: #6a0dad; /* Morado vibrante */
+  margin-top: 15px;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button.logout {
+  background-color: #d9534f; /* Rojo para el botón de cerrar sesión */
+}
+
+/* Nuevos estilos para inputs de tareas */
+input {
+  width: 100%; /* Ajustar al 100% del contenedor */
+  max-width: 300px; /* Ancho máximo para los inputs */
+  margin: 0 auto; /* Centrar el input */
+  display: block; /* Mostrar como bloque */
+  padding: 10px;
+  border: 2px solid #7a0b7a; /* Morado más claro */
+  border-radius: 5px;
+  background-color: #3f4144; /* Color de fondo del input */
+  color: white; /* Color del texto en el input */
+}
+
+input:focus {
+  border-color: #a45db2; /* Color al enfocar */
+  outline: none;
+}
+
+
+
+.logout-container {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  margin-top: 20px; /* Espacio arriba del botón */
+}
+
+/* Home.css */
+
+h1 {
+  color: #6a0dad; /* Morado vibrante */
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra para resaltar el texto */
+  margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+p {
+  text-align: center;
+  color: white; /* Color del texto */
+  margin-bottom: 20px; /* Espacio debajo del párrafo */
+}
+
+.link-container {
+  display: flex;
+  flex-direction: column; /* Disposición en columnas */
+  align-items: center; /* Centrar horizontalmente */
+  margin-top: 20px; /* Espacio encima de los enlaces */
 }
 
 .link {
-  display: block; /* O inline-block si prefieres */
-  margin: 10px; /* Ajusta el margen según sea necesario */
-  text-align: center; /* Centra el texto del enlace */
+  display: inline-block; /* Mostrar como bloque en línea */
+  margin: 10px; /* Espacio entre enlaces */
+  color: #f5eeee; /* Texto más claro */
+  text-decoration: none; /* Sin subrayado */
+  padding: 10px 20px; /* Espaciado interno */
+  border: 2px solid #7a0b7a; /* Morado más claro */
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: #3f4144; /* Color de fondo del enlace */
 }
 
-body {
+.link:hover {
+  background-color: #b073d8; /* Cambiar a morado al pasar el mouse */
+  color: white; /* Cambiar el texto a blanco */
+  border-color: #a45db2; /* Cambiar color del borde al pasar el mouse */
+}
+
+/* Login.css */
+
+.login-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Asegura que el contenido esté centrado verticalmente */
-  text-align: center; /* Centra el texto en toda la página */
+  align-items: center; /* Centrar el contenido */
+  margin-top: 40px; /* Espacio arriba del contenedor */
+}
+
+h2 {
+  color: #6a0dad; /* Morado vibrante */
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra para resaltar el texto */
+  margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar los elementos del formulario */
+}
+
+input {
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #7a0b7a; /* Morado más claro */
+  border-radius: 5px;
+  width: 300px; /* Ancho fijo para los inputs */
+  font-size: 16px;
+  background-color: #3f4144; /* Color de fondo del input */
+  color: white; /* Color del texto en el input */
+}
+
+input:focus {
+  border-color: #a45db2; /* Color al enfocar */
+  outline: none;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #6a0dad; /* Morado vibrante */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px; /* Espacio encima del botón */
+}
+
+p {
+  text-align: center;
+  color: white; /* Color del texto */
+  margin: 10px 0; /* Espacio alrededor de los párrafos */
+}
+
+p.error {
+  color: red; /* Color del texto de error */
+}
+
+p.success {
+  color: green; /* Color del texto de éxito */
+}
+
+.link {
+  display: block;
+  text-align: center;
+  color: #6a0dad; /* Morado vibrante */
+  margin-top: 15px;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
 }
